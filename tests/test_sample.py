@@ -3,7 +3,7 @@ import unittest
 
 class TestSampleClass(unittest.TestCase):
 
-    def test_should_fail(self):
+    def test_should_pass(self):
         self.assertTrue(True)
         
 
