@@ -21,17 +21,10 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Requirements
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - uses: envasetechnologies/.github/actions/python/install-requirements@v0
       - name: Run Unit Tests
         run: bolt ut
       - name: Run Feature Tests
         run: bolt ft
-      - name: Auto Assign Action
-        uses: kentaro-m/auto-assign-action@v1.2.1
-        with:
-          # A path for the auto-assign configuration
-          configuration-path: .github/reviewers.yml
+      
         
